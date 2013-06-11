@@ -21,3 +21,9 @@ Once installed, register the serialization in your app delegate (or wherever you
 ```
 
 Note that you may register the class for more than one MIME Type or use an `NSRegularExpression` that matches the MIME Type that you wish to register. For more details, review the [API Documentation](http://restkit.org/api/latest/Classes/RKMIMETypeSerialization.html).
+
+## Acknowledgements
+
+Based on [RKJSONKitSerialization][].
+
+[RKJSONKitSerialization]: https://github.com/RestKit/RKJSONKitSerialization
