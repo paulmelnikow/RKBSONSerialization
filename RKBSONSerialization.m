@@ -27,16 +27,6 @@
 
 @implementation RKBSONSerialization
 
-+ (JSONDecoder *)sharedDecoder
-{
-    static BSONDecoder *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[BSONDecoder alloc] init];
-    });
-    return sharedInstance;
-}
-
 + (id)objectFromData:(NSData *)data error:(NSError **)error
 {
     return [BSONDecoder decodeDictionaryWithData:data];
