@@ -1,9 +1,9 @@
 RKBSONSerialization
 ===================
 
-(Under development)
-
 A RestKit [BSON][] serialization implementation using [ObjCMongoDB][]
+
+The root object in a BSON object must be a dictionary, so if you're sending an array you need to wrap it in a dictionary. If you're pushing an arary, you can use the 'rootKeyPath' property of `RKRequestDescriptor` to automatically wrap the objects into a dictionary.
 
 ## Installation
 
