@@ -11,16 +11,18 @@ Install via Cocoapods or add the source files to your project. If you are
 installing directly from source, you will also need to obtain a copy of the BSON
 part of [ObjCMongoDB][].
 
-Once installed, register the serialization in your app delegate (or wherever you handle RestKit setup):
+You must register the serialization in your app delegate (or wherever you handle RestKit setup).
+
+You must also register the no-op formatter provided to prevent RestKit from formatting your dates as strings before they reach the serializer. You can either do this globally as shown below, or on individual RKObjectMapping objects.
 
 ``` objc
 #import "RKBSONSerialization.h"
+#import "RKBSONDateFormatter.h"
 
 [RKMIMETypeSerialization registerClass:[RKBSONSerialization class] forMIMEType:@"application/bson"];
+[RKObjectMapping setPreferredDateFormatter:[[RKBSONDateFormatter alloc] init]];
 
 ```
-
-Note that you may register the class for more than one MIME Type or use an `NSRegularExpression` that matches the MIME Type that you wish to register. For more details, review the [API Documentation](http://restkit.org/api/latest/Classes/RKMIMETypeSerialization.html).
 
 ## Acknowledgements
 
