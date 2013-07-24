@@ -19,11 +19,6 @@
 
 #import "RKBSONSerialization.h"
 #import "ObjCBSON.h"
-#import "RKLog.h"
-
-// Set Logging Component
-#undef RKLogComponent
-#define RKLogComponent lcl_cRestKitSupportParsers
 
 @implementation RKBSONSerialization
 
